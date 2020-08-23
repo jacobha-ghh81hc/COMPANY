@@ -1,6 +1,6 @@
 Hello everyone,
-My name is jacobha. Currently, I am an ABS/HAL developer working for Bosch Vietnam. That is the brake function of the ESP product to aid in the stability and steering ability while braking of modern cars.
+My name is jacob ha. Currently, I am an ABS/HAL developer working for Bosch Vietnam. That is the brake function of the ESP product to aid in the stability and steering ability while braking of modern cars.
 
-This is the linux embedded system repository of ghh81hc
-It includes these source files targeting to Raspberry Pi 3B, mainly derived on Dr.Derek Molloy's book and other developers
+This is the linux embedded system repository of ghh81hc.
+It includes these source files targeting to Raspberry Pi 3B, mainly derived on Dr.Derek Molloy's book and other developers.
 I'm cooking them for the academic purpose. So, welcome you!
