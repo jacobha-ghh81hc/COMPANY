@@ -20,3 +20,7 @@ sudo apt-get install $THIRD_PACKAGES -y
 #sudo apt-get upgrade -y
 #sudo apt-get autoremove -y
 #sudo apt-get autoclean -y
+
+
+#Click on Icon to Minimize Application Window in Ubuntu 20.04
+echo "Minimize running window on click via single command!" | sudo gsettings set org.gnome.shell.extensions.dash-to-dock click-action 'minimize'
