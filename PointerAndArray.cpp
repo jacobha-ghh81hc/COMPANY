@@ -3,6 +3,16 @@
 using namespace std;
 
 // Hàm nhận đối số là mảng một chiều int NameOfArray[] hoặc int * APointer
+// The sizeof way is the right way if you are dealing with arrays not received as parameters
+// An array sent as a parameter to a function is treated as a pointer, so sizeof will return the pointer's size, instead of the array's size
+// Thus, inside functions this method does not work
+// Instead, always pass an additional parameter size_t size indicating the number of elements in the array
+// As the Wikipedia entry makes clear, C's sizeof is not a function; it's an operator
+// Thus, it does not require parenthesis around its argument, unless the argument is a type name
+// This is easy to remember, since it makes the argument look like a cast expression, which also uses parenthesis
+// Formula for computing the address of ptr + i where ptr has type T then the formula for the address is:
+// addr(ptr + i) = addr(ptr) + [sizeof(T) * i]
+
 void DoubleThem (int NameOfArray[])
 {
 	// Chúng ta nên truyền thêm một đối số là số lượng phần tử của mảng sizeof(NameOfArray)/sizeof(NameOfArray[0])
@@ -16,7 +26,7 @@ void DoubleThem (int NameOfArray[])
 	return;
 }
 
-// Mảng một chiều trong c có thể làm như bên dưới được, còn trong C++ thì bản chất vẫn vậy nhưng compiler không cho phép một số cái
+// Mảng một chiều trong C có thể làm như bên dưới được, còn trong C++ thì bản chất vẫn vậy nhưng compiler không cho phép một số cái
 
 int main ()
 {

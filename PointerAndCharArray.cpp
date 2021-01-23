@@ -2,6 +2,9 @@
 #include <array>
 using namespace std;
 
+// We prefer using a pointer in our program instead of an array because the variable pointer can be incremented
+// Unlike the array name which cannot be incremented because it is a constant pointer
+
 void printingCharArray (char ACharArray[]) // char * APointer cũng được
 {
 	while(*ACharArray != '\0')
