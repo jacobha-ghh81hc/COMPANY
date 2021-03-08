@@ -32,21 +32,30 @@ int main ()
 {
 	// Đây là mảng một chiều kiểu char, declare và define kiểu này thì không cần có ký tự kết thúc chuỗi '\0'
 	char website[] = {'H','a','c','k','e','r','r','a','n','k','\0','N','O','T','-','A','-','C','H','A','R','-','A','R','R','A','Y'};
-	for(int i = 0; i < sizeof(website)/sizeof(website[0]); ++i)
+	for(long unsigned int i = 0; i < sizeof(website)/sizeof(website[0]); ++i)
 	{
 		cout << *(website + i);
 	}
 	cout << endl;
 
 	// Đây là mảng một chiều kiểu char, chú ý có thêm một ký tự kêt thúc chuỗi ở cuối cùng '\0'
+	// sẽ trả về một char *webpage trỏ tới vùng nhớ đã cấp phát cho chuỗi Hackerrank
+	// Ta có thể tạo mảng con trỏ char *p_Info[2]; p_Info[0] = webpage; p_Info[1] = address; and so on
 	char webpage[] = "Hackerrank";
-	printingCharArray(webpage);
+	char address[] = "123 Pham Van Bach, Phuong 12, Tan Binh, HCM";
+	char *p_Info[2];
+	*(p_Info + 0) = webpage; // p_Info[0] = webpage;
+	p_Info[1] = address; // *(p_Info + 1) = address;
+
+
+	printingCharArray(*(p_Info + 0));
+	printingCharArray(*(p_Info + 1));
 
 	int Phone[] = {0,9,7,5,5,6,8,6,0,1}; // C
 	array<int,10> PhoneCpp[] = {0,9,7,5,5,6,8,6,0,1}; // C++
 	printingNumberArray(Phone,sizeof(Phone)/sizeof(Phone[0]));
 
-	for(int i = 0; i < sizeof(Phone)/sizeof(Phone[0]); ++i)
+	for(long unsigned int i = 0; i < sizeof(Phone)/sizeof(Phone[0]); ++i)
 	{
 		cout << *(Phone+i);
 		//Phone++; // Tại sao increment tên mảng một chiều kiểu int không được mà kiểu char lại được
