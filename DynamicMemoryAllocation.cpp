@@ -1,6 +1,8 @@
 #include <iostream>
 using namespace std;
 
+//https://www.geeksforgeeks.org/dynamic-memory-allocation-in-c-using-malloc-calloc-free-and-realloc/
+
 
 int main ()
 {

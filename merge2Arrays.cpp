@@ -1,26 +1,30 @@
 #include <iostream>
 #include <vector>
+#include <time.h>
+using namespace std;
+#define N 10
+
 // https://www.techiedelight.com/find-kth-largest-element-array/
 // https://www.geeksforgeeks.org/k-th-element-two-sorted-arrays/
-using namespace std;
 
-ostream& operator<< (ostream& os, const std::vector<int> &v)
+int* autoGeneration(void)
 {
-	for(auto it = v.begin(); it != v.end(); ++it)
+	int *retArray = (int*)calloc(N, sizeof(int));
+	srand(time(0));
+	for (int i = 0; i < N; i++)
 	{
-		os << *it << ',';
+		*(retArray + i) = rand() % 100;
+		cout << *(retArray + i) << ',';
 	}
-	return os;
+	cout << endl;
+	return retArray;
 }
-
-#define N 10
 
 int main()
 {
 	int firstArray[N] = {14,24,30,41,56,67,70,83,91,101};
 	int secondArray[N] = {1,25,30,41,55,63,70,82,93,106};
 
-	int kRequired = 11;
 	int *mergedArray = (int*)calloc(2*N, sizeof(int));
 
 	int i,j,k;
@@ -30,14 +34,12 @@ int main()
 		if(*(firstArray+i) < *(secondArray+j))
 		{
 			*(mergedArray+k) = *(firstArray+i);
-			if(k == kRequired) cout << *(firstArray+i) << endl;
 			k++;
 			i++;
 		}
 		else
 		{
 			*(mergedArray+k) = *(secondArray+j);
-			if(k == kRequired) cout << *(secondArray+j) << endl;
 			k++;
 			j++;
 		}
@@ -46,7 +48,6 @@ int main()
 	while(i<N)
 	{
 		*(mergedArray+k) =  *(firstArray+i);
-		if(k == kRequired) cout << *(firstArray+i) << endl;
 		i++;
 		k++;
 	}
@@ -54,7 +55,6 @@ int main()
 	while(j<N)
 	{
 		*(mergedArray+k) =  *(secondArray+j);
-		if(k == kRequired) cout << *(secondArray+j) << endl;
 		j++;
 		k++;
 	}
